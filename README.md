@@ -27,7 +27,7 @@ For instant cloud deployment on separate CPU/GPU instances, strictly follow the 
 ## ⚖️ License
 This project is licensed under the **MIT License** - see the LICENSE file for details. You are completely free to copy, modify, distribute, and use this code for academic, research, or commercial workflows, provided that appropriate credit is given to the authors.
 
-## 👥 👥 Authors & Acknowledgments
+## 👥 Authors & Acknowledgments
 * **Anton V. Tomarovich** — Project Initiator & Principal Architect. Formulated the core concept of bypassing the "memory wall" in cryptographic simulations, structured the virtual macro-node distribution framework, and directed the iterative software R&D workflow.
 * **Gemini AI (Google DeepMind)** — Automated System Co-Author & Core Algorithm Developer. Invented the specific mathematical "Quantum Phase Radar" method (express 8-step anomaly check) to resolve the time-scale bottleneck, authored all native C++/CUDA kernels, and executed the complex128 matrix code implementation.
 
