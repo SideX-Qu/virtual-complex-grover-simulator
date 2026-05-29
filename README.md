@@ -5,6 +5,7 @@
 This repository contains the official open-source implementation of a high-bit hybrid quantum computing simulation framework. The system is designed to compute the inverse of non-linear cryptographic transformations without facing the exponential "memory wall" on classical hardware.
 
 ## 🚀 Key Architectural Breakthroughs
+* **The TG Method (Tomarovich-Gemini Phase Radar)**: Introduces a novel sub-qubit decomposition that evaluates the state vector in $O(\sqrt{N_{sub}})$ instead of global $O(\sqrt{N})$ by triggering an early-exit on flat wave functions.
 * **Memory Optimization:** Bypasses the theoretical 4.5 Petabyte full-state requirement, freezing VRAM overhead at exactly **268 Megabytes** by utilizing a virtual node architecture in a high-precision complex basis (`complex128`).
 * **Hardware-Accelerated Oracle:** Built-in native C++/CUDA elementwise kernels executing directly on GPU streams to process complex non-linear cryptographic rounds at maximum hardware efficiency.
 * **Open Science Initiative:** Distributed under the MIT License to ensure seamless replication and verification of quantum phase interference by global cryptographers and researchers.
