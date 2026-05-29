@@ -1,0 +1,34 @@
+Для проведения серийной верификации и правильного воспроизведения результатов вычислений необходимо подготовить две независимые изолированные среды внутри сервиса Google Colab [INDEX]:
+1. Подготовка среды и запуск программы-шифратора (MCE-48):
+•	Откройте Google Colab и создайте новый пустой блокнот.
+•	В верхнем меню выберите: Среда выполнения (Runtime) -> Изменить тип среды выполнения (Change runtime type). В строке Аппаратный ускоритель (Hardware accelerator) выберите CPU (стандартный процессор). Нажмите Сохранить.
+•	Создайте ячейку кода, вставьте туда полный текст программы-шифратора mce48.py и запустите её.
+•	В интерактивном окне введите строго 48 двоичных символов (только нули '0' и единицы '1') [INDEX]. Программа мгновенно выполнит нелинейный расчет и выдаст итоговый хэш в двоичной форме (также в виде строки из 48 бит) [INDEX].
+2. Подготовка среды и запуск квантового симулятора (VCGS-48):
+•	Создайте второй, полностью независимый блокнот в Google Colab [INDEX].
+•	В верхнем меню выберите: Среда выполнения (Runtime) -> Изменить тип среды выполнения (Change runtime type). В строке Аппаратный ускоритель (Hardware accelerator) строго выберите T4 GPU (графический ускоритель). Нажмите Сохранить.
+•	Создайте ячейку кода, вставьте туда полный текст программы-симулятора vcgs48.py и запустите её.
+•	Скопируйте двоичный хэш из mce48.py и вставьте сюда в появившееся интерактивное поле ввода, после чего нажмите Enter.
+3. Логика зависимости времени от величины прообраза:
+Графический процессор Tesla T4 инициализирует комплексный вектор состояний и начнет последовательное поочередное сканирование макро-узлов распределенной сети, начиная с Узла №0 [INDEX].
+В процессе работы алгоритма критическим фактором является математический вес искомого кода: чем больше исходное число в десятичной системе счисления (которое вы изначально ввели в шифратор в виде 48 бит), тем более высокий порядковый номер макро-узла оно займет в распределенной матрице, и тем больше времени понадобится квантовому симулятору на его обнаружение.
+При достижении целевого сектора квантовый радар зафиксирует фазовую аномалию, выполнит автоматическую докрутку и выдаст на экран стопроцентно точное исходное двоичное число, остановив конвейер вычислений [INDEX].
+
+APPENDIX A. Step-by-Step Software Package Execution Guide
+To perform serial verification and ensure proper replication of the computational results, two independent, isolated environments must be configured within the Google Colab service [INDEX]:
+1. Environment Setup and Execution of the Cryptographic Encoder (MCE-48):
+•	Open Google Colab and create a new empty notebook.
+•	Navigate to the top menu: Runtime -> Change runtime type. In the Hardware accelerator row, select CPU (standard processor). Click Save.
+•	Create a code cell, paste the complete source code of the encoder program (mce48.py), and execute it.
+•	In the interactive prompt, enter exactly 48 binary characters (only zeros '0' and ones '1') [INDEX]. The program will instantly perform non-linear calculations and output the resulting hash in binary form (also as a 48-bit string) [INDEX].
+2. Environment Setup and Execution of the Quantum Simulator (VCGS-48):
+•	Create a second, completely independent notebook in Google Colab [INDEX].
+•	Navigate to the top menu: Runtime -> Change runtime type. In the Hardware accelerator row, strictly select T4 GPU (graphics accelerator). Click Save.
+•	Create a code cell, paste the complete source code of the simulator program (vcgs48.py), and execute it.
+•	Copy the binary hash from mce48.py and paste it here into the interactive input field, then press Enter.
+3. Execution Time Dependency on Preimage Value:
+The Tesla T4 graphics processing unit will initialize the complex state vector and begin sequential scanning of the distributed macro-nodes within the network, starting from Node №0 [INDEX].
+During execution, the mathematical weight of the target code acts as the critical factor: the larger the original preimage value in the decimal number system (which was initially entered into the encoder as 48 bits), the higher the macro-node index it will occupy within the distributed matrix, and the more classical time the quantum simulator will require to detect it.
+Upon reaching the target sector, the system will detect the phase boundary anomaly, automatically perform complete amplitude amplification, and display the exact original binary number on the screen, terminating the computational pipeline [INDEX].
+
+
