@@ -1,4 +1,6 @@
-# Model Cryptographic Encoder and Virtual Complex Grover Simulator (48-Qubit)
+# The Tomarovich-Gemini (TG) Hybrid Quantum Computing Algorithm
+## 48-Qubit Virtual Complex Grover Simulator with Phase-Anomaly Filtering
+
 
 This repository contains the official open-source implementation of a high-bit hybrid quantum computing simulation framework. The system is designed to compute the inverse of non-linear cryptographic transformations without facing the exponential "memory wall" on classical hardware.
 
